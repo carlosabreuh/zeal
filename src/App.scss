@@ -1,0 +1,88 @@
+@import-normalize; /* bring in normalize.css styles */
+
+// .App {
+//   text-align: center;
+// }
+
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+// }
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .App-logo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
+
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
+
+// .App-link {
+//   color: #61dafb;
+// }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+
+.container {
+  max-width: 1000px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.show-small,
+.show-small-inline {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .hide-small {
+    display: none !important;
+  }
+
+  .show-small-inline {
+    display: inline;
+  }
+
+  .show-small-block {
+    display: block;
+  }
+}
+
+.MuiTypography-body1 {
+  font-weight: 300 !important;
+  line-height: 1.6 !important;
+}
+
+.about-section {
+  margin: 3rem 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.header-text {
+  font-family: "Merriweather", Georgia !important;
+  letter-spacing: 1px !important;
+  font-weight: 700 !important;
+}
