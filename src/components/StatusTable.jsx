@@ -88,10 +88,10 @@ export default function StatusTable() {
         for (let i = 0; i < res.data.length; i++) {
           newData.push(
             createData(
-              'HUD',
-              'https://www.hud.gov/findshelter',
-              'Web',
-              'Shelter, Food, Health Clinics, Clothing ',
+              'Red Cross',
+              'https://www.redcross.org/get-help/disaster-relief-and-recovery-services/find-an-open-shelter.html',
+              'Local',
+              'First Aid, Disaster Relief, Donations, Fire Victims',
               'Active'
             )
           );
@@ -100,7 +100,7 @@ export default function StatusTable() {
 
         // const jsonList = ;
         console.log(res.data);
-        console.log(tableRows);
+        // console.log(tableRows);
       });
   }, []);
 
