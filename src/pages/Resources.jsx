@@ -32,12 +32,9 @@ export default function Resources() {
   };
 
   const fetchAPI = () => {
-    //let CORS = 'https://cors-anywhere.herokuapp.com/';
     axios
       .get(
-        `https://api.data.charitynavigator.org/v2/Organizations?app_id=1c78159c&app_key=1002afa0e557f07029f57976faa15265&zip=${zip}`
-        //https://api.data.charitynavigator.org/v2/Organizations?app_id=1c78159c&app_key=1002afa0e557f07029f57976faa15265&pageSize=20&causeID=18&zip=11215
-        //${CORS}
+        `https://api.data.charitynavigator.org/v2/Organizations&zip=${zip}`
       )
       .then((res) => {
         const newData = [];
@@ -49,18 +46,12 @@ export default function Resources() {
               res.data[i].websiteURL,
               res.data[i].mailingAddress.city,
               res.data[i].irsClassification.deductibility,
-
-
-              // res.data[i].cause.causeName,
               'Active'
             )
           );
         }
         updateTableRow([...newData]);
-
-        // const jsonList = ;
         console.log(res.data);
-        // console.log(tableRows);
       });
   };
   return (
