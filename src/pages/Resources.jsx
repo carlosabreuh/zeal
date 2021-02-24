@@ -35,8 +35,8 @@ export default function Resources() {
     //let CORS = 'https://cors-anywhere.herokuapp.com/';
     axios
       .get(
-        `https://api.data.charitynavigator.org/v2/Organizations?app_id=0616eb7c&app_key=7e0732a8d69ff0d50e69d591a5d7bd51&pageSize=20&zip=${zip}`
-       //https://api.data.charitynavigator.org/v2/Organizations?app_id=1c78159c&app_key=1002afa0e557f07029f57976faa15265&pageSize=20&causeID=18&zip=11215
+        `https://api.data.charitynavigator.org/v2/Organizations?app_id=1c78159c&app_key=1002afa0e557f07029f57976faa15265&zip=${zip}`
+        //https://api.data.charitynavigator.org/v2/Organizations?app_id=1c78159c&app_key=1002afa0e557f07029f57976faa15265&pageSize=20&causeID=18&zip=11215
         //${CORS}
       )
       .then((res) => {
@@ -48,6 +48,9 @@ export default function Resources() {
               res.data[i].charityName,
               res.data[i].websiteURL,
               res.data[i].mailingAddress.city,
+              res.data[i].irsClassification.deductibility,
+
+
               // res.data[i].cause.causeName,
               'Active'
             )
