@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import Resources from "./pages/Resources";
+import Resources from "./pages/Resources/Resources.jsx";
 import Typography from "@material-ui/core/Typography";
 import Header from './components/Header.jsx';
 
