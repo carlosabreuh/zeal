@@ -2,17 +2,31 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Checkbox from '@material-ui/core/Checkbox';
 import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
-import Link from "@material-ui/core/Link";
-import Box from "@material-ui/core/Box";
+import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
+import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
 import StatusTable from '../../components/StatusTable';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import './Resources.css';
 
-function createData(name, charityNavigatorURL, numSites, status, statusUpdatedAt) {
-  return { name, charityNavigatorURL, numSites, status, statusUpdatedAt };
+function createData(
+  name,
+  websiteURL,
+  charityNavigatorURL,
+  numSites,
+  status,
+  statusUpdatedAt
+) {
+  return {
+    name,
+    websiteURL,
+    charityNavigatorURL,
+    numSites,
+    status,
+    statusUpdatedAt,
+  };
 }
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,8 +37,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Resources() {
-  const [tableRows, updateTableRow] = useState([]);
+export default function Resources({
+  setMyCharities,
+  myCharities,
+  tableRows,
+  updateTableRow,
+}) {
   const [st, setSt] = useState('');
   const [zip, setZip] = useState('');
   const [search, setSearch] = useState('');
@@ -47,14 +65,12 @@ export default function Resources() {
           newData.push(
             createData(
               res.data[i].charityName,
+              res.data[i].websiteURL,
               res.data[i].charityNavigatorURL,
               res.data[i].mailingAddress.city,
               res.data[i].irsClassification.deductibility,
               'Active'
-             
-             
             )
-            
           );
         }
         updateTableRow([...newData]);
@@ -99,7 +115,12 @@ export default function Resources() {
             
           /> */}
         </form>
-        <StatusTable tableRows={tableRows} />
+        <StatusTable
+          myCharities={myCharities}
+          setMyCharities={setMyCharities}
+          tableRows={tableRows}
+           page={"Resources"}
+        />
       </section>
       <section className='about-section' id='faq'></section>
     </div>
