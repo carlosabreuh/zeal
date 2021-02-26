@@ -17,7 +17,9 @@ function createData(
   charityNavigatorURL,
   numSites,
   status,
-  statusUpdatedAt
+  ein,
+  statusUpdatedAt,
+  
 ) {
   return {
     name,
@@ -25,7 +27,9 @@ function createData(
     charityNavigatorURL,
     numSites,
     status,
+    ein,
     statusUpdatedAt,
+    
   };
 }
 const useStyles = makeStyles((theme) => ({
@@ -69,6 +73,7 @@ export default function Resources({
               res.data[i].charityNavigatorURL,
               res.data[i].mailingAddress.city,
               res.data[i].irsClassification.deductibility,
+              res.data[i].ein,
               'Active'
             )
           );
