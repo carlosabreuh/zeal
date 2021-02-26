@@ -34,9 +34,9 @@ export default function StatusTable({ tableRows, myCharities, setMyCharities, pa
   } else if (page === "Resources") {
     buttonFunc = (newCharity) =>  { 
       console.log(tableRows);
-      let test = tableRows.includes((ch) => ch.ein!==newCharity.ein)
-      console.log(test);
-      if(test){
+      let alreadyAdded = myCharities.filter((ch) => ch.ein===newCharity.ein).length
+      console.log(alreadyAdded);
+      if(!alreadyAdded){
         setMyCharities((state) => [...state, newCharity]);
       } 
      }
