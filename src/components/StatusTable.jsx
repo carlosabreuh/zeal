@@ -25,7 +25,7 @@ export default function StatusTable({ tableRows }) {
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell>Sites</TableCell>
+            <TableCell>City</TableCell>
             <TableCell>Services</TableCell>
             <TableCell>Status</TableCell>
           </TableRow>
