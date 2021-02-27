@@ -60,7 +60,7 @@ if (false) {
       }
     };
   
-    buttonName = ''
+    buttonName = '➕'
   }
   //myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
 
@@ -71,7 +71,7 @@ if (false) {
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>City</TableCell>
-            <TableCell>Services</TableCell>
+            <TableCell>Classification</TableCell>
             <TableCell>Status</TableCell>
             <TableCell>keep</TableCell>
           </TableRow>
