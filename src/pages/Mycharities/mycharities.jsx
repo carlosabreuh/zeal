@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StatusTable } from '../../components';
+import Alert from '../../components/Alert'
 
 export default function MyCharities({ myCharities, tableRows, setMyCharities }) {
   console.log(myCharities);
