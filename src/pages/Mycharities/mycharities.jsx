@@ -5,10 +5,12 @@ export default function MyCharities({ myCharities, tableRows, setMyCharities }) 
   console.log(myCharities);
 
   return (
-    <StatusTable
+      <>
+    { myCharities.length ? <StatusTable
       setMyCharities={setMyCharities}
       tableRows={myCharities}
       page={"MyCharities"}
-    />
+    />: ""}
+    </>
   );
 }
