@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Checkbox from '@material-ui/core/Checkbox';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
-import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
 import StatusTable from '../../components/StatusTable';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
+import Alert from '../../components/Alert'
 import './Resources.css';
 
 function createData(
@@ -18,8 +14,7 @@ function createData(
   numSites,
   status,
   ein,
-  statusUpdatedAt,
-  
+  statusUpdatedAt
 ) {
   return {
     name,
@@ -29,7 +24,6 @@ function createData(
     status,
     ein,
     statusUpdatedAt,
-    
   };
 }
 const useStyles = makeStyles((theme) => ({
@@ -72,7 +66,7 @@ export default function Resources({
               res.data[i].websiteURL,
               res.data[i].charityNavigatorURL,
               res.data[i].mailingAddress.city,
-              res.data[i].irsClassification.deductibility,
+              res.data[i].irsClassification.classification,
               res.data[i].ein,
               'Active'
             )
@@ -84,13 +78,28 @@ export default function Resources({
   };
   return (
     <div>
+      
       <Typography>
         Zeal is a site where you can find a number of resources to assist you
         finding food, shelter, health clinics and clothing all in one location.
       </Typography>
+      <ol>
+        <li>
+          Enter your Zipcode + Enter
+        </li>
+        <br></br>
+        <li>
+          Explore results in your area
+        </li>
+        <br></br>
+        <li>
+          Add them to My <cite>Charities</cite>
+        </li>
+      </ol>
 
       <section className='about-section' id='supported-websites'>
         <h2 className='header-text'>Resources</h2>
+      <Alert />
 
         <br></br>
         <form
@@ -120,12 +129,16 @@ export default function Resources({
             
           /> */}
         </form>
-        { tableRows.length ? <StatusTable 
-          myCharities={myCharities}
-          setMyCharities={setMyCharities}
-          tableRows={tableRows}
-           page={"Resources"}
-        />: ""}
+        {tableRows.length ? (
+          <StatusTable
+            myCharities={myCharities}
+            setMyCharities={setMyCharities}
+            tableRows={tableRows}
+            page={'Resources'}
+          />
+        ) : (
+          ''
+        )}
       </section>
       <section className='about-section' id='faq'></section>
     </div>
