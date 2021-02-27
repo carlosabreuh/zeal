@@ -120,12 +120,12 @@ export default function Resources({
             
           /> */}
         </form>
-        <StatusTable
+        { tableRows.length ? <StatusTable 
           myCharities={myCharities}
           setMyCharities={setMyCharities}
           tableRows={tableRows}
            page={"Resources"}
-        />
+        />: ""}
       </section>
       <section className='about-section' id='faq'></section>
     </div>
