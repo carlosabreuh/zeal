@@ -7,6 +7,8 @@ import { Typography } from '@material-ui/core';
 import Alert from '../../components/Alert'
 import './Resources.css';
 
+
+
 function createData(
   name,
   websiteURL,
@@ -65,11 +67,12 @@ export default function Resources({
               res.data[i].charityName,
               res.data[i].websiteURL,
               res.data[i].charityNavigatorURL,
-              res.data[i].mailingAddress.city,
-              res.data[i].irsClassification.classification,
+              res.data[i].mailingAddress.streetAddress1,
+              res.data[i].irsClassification.nteeClassification,
               res.data[i].ein,
               'Active'
             )
+          
           );
         }
         updateTableRow([...newData]);
@@ -78,27 +81,34 @@ export default function Resources({
   };
   return (
     <div>
-      
       <Typography>
-        Zeal is a site where you can find a number of resources to assist you
-        finding food, shelter, health clinics and clothing all in one location.
+        Follow the steps below to find the charities in your community. 
       </Typography>
       <ol>
         <li>
+          <Typography>
           Enter your Zipcode + Enter
+          </Typography>
         </li>
         <br></br>
         <li>
+          <Typography>
           Explore results in your area
+          </Typography>
         </li>
         <br></br>
         <li>
+          <Typography>
           Add them to My <cite>Charities</cite>
+          </Typography>
         </li>
       </ol>
 
+
+      
+
       <section className='about-section' id='supported-websites'>
-        <h2 className='header-text'>Resources</h2>
+        <h2 className='header-text'></h2>
       <Alert />
 
         <br></br>
