@@ -8,41 +8,61 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import CheckIcon from '@material-ui/icons/Check';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import { Checkbox } from '@material-ui/core';
+import { ActionFavorite } from 'material-ui/svg-icons';
 
 const useStyles = makeStyles({
   table: {},
 });
 
-
-export default function StatusTable({ tableRows, myCharities, setMyCharities, page }) {
+export default function StatusTable({
+  tableRows,
+  myCharities,
+  setMyCharities,
+  page,
+}) {
   const classes = useStyles();
 
   const handleClick = (newCharity) => {
     console.log(newCharity);
     console.log(newCharity);
-    buttonFunc(newCharity)
-    
-  }
+    buttonFunc(newCharity);
+  };
 
   let buttonName, buttonFunc;
 
+  if (page === 'MyCharities') {
+    buttonFunc = (newCharity) =>
+      setMyCharities((state) =>
+        state.filter((charity) => newCharity.ein !== charity.ein)
+      );
+    buttonName = 'Remove';
+  } else if (page === 'Resources') {
 
-  if(page === "MyCharities") {
-    buttonFunc = (newCharity) => setMyCharities ((state) => state.filter((charity) => newCharity.ein !== charity.ein ))
-    buttonName = "Remove"
-  } else if (page === "Resources") {
-    buttonFunc = (newCharity) =>  { 
+
+if (false) {
+  alert("Please Login")
+  return
+}
+  
+
+
+    buttonFunc = (newCharity) => {
       console.log(tableRows);
-      let alreadyAdded = myCharities.filter((ch) => ch.ein===newCharity.ein).length
+      let alreadyAdded = myCharities.filter((ch) => ch.ein === newCharity.ein)
+        .length;
       console.log(alreadyAdded);
-      if(!alreadyAdded){
+      if (!alreadyAdded) {
         setMyCharities((state) => [...state, newCharity]);
-      } 
-     }
-    buttonName = "Add";
+      }
+    };
+  
+    buttonName = ''
   }
-//myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
+  //myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
 
   return (
     <TableContainer component={Paper}>
@@ -61,14 +81,19 @@ export default function StatusTable({ tableRows, myCharities, setMyCharities, pa
           {tableRows.map((row, index) => (
             <TableRow key={index}>
               <TableCell component='th' scope='row'>
-                <Link target='_blank' href={row.websiteURL || row.charityNavigatorURL}>
+                <Link
+                  target='_blank'
+                  href={row.websiteURL || row.charityNavigatorURL}
+                >
                   {row.name}
                 </Link>
               </TableCell>
               <TableCell>{row.numSites}</TableCell>
               <TableCell>{row.status}</TableCell>
               <TableCell>{row.statusUpdatedAt}</TableCell>
-              <TableCell onClick={() => handleClick (row)} >{buttonName}</TableCell>
+              <TableCell onClick={() => handleClick(row)}>
+                {buttonName}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
