@@ -71,9 +71,9 @@ if (false) {
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>City</TableCell>
-            <TableCell>Classification</TableCell>
+            <TableCell>Classification / Purpose</TableCell>
             <TableCell>Status</TableCell>
-            <TableCell>keep</TableCell>
+            <TableCell>Save</TableCell>
           </TableRow>
         </TableHead>
         {/* Table Contents */}
