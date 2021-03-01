@@ -8,11 +8,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import CheckIcon from '@material-ui/icons/Check';
-import SvgIcon from '@material-ui/core/SvgIcon';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import { Checkbox } from '@material-ui/core';
-import { ActionFavorite } from 'material-ui/svg-icons';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 const useStyles = makeStyles({
   table: {},
@@ -32,23 +32,25 @@ export default function StatusTable({
     buttonFunc(newCharity);
   };
 
-  let buttonName, buttonFunc;
+  let buttonName, buttonFunc, actionName;
 
-  if (page === 'MyCharities') {
+  if (page === 'MyCharities') { 
+    actionName = 'Remove';
     buttonFunc = (newCharity) =>
       setMyCharities((state) =>
         state.filter((charity) => newCharity.ein !== charity.ein)
       );
-    buttonName = 'Remove';
+    buttonName = (
+      <IconButton aria-label='delete'>
+        <DeleteIcon />
+      </IconButton>
+    );
   } else if (page === 'Resources') {
-
-
-if (false) {
-  alert("Please Login")
-  return
-}
-  
-
+    actionName = 'Save';
+    if (false) {
+      alert('Please Login');
+      return;
+    }
 
     buttonFunc = (newCharity) => {
       console.log(tableRows);
@@ -59,8 +61,17 @@ if (false) {
         setMyCharities((state) => [...state, newCharity]);
       }
     };
-  
-    buttonName = '➕'
+
+    buttonName = (
+      <Fab
+        size='small'
+        color='secondary'
+        aria-label='add'
+        className={classes.margin}
+      >
+        <AddIcon />
+      </Fab>
+    );
   }
   //myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
 
@@ -73,7 +84,7 @@ if (false) {
             <TableCell>City</TableCell>
             <TableCell>Classification / Purpose</TableCell>
             <TableCell>Status</TableCell>
-            <TableCell>Save</TableCell>
+            <TableCell>{actionName}</TableCell>
           </TableRow>
         </TableHead>
         {/* Table Contents */}
