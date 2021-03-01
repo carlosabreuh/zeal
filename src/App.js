@@ -81,11 +81,11 @@ function Nav({ myCharities, setMyCharities, tableRows, updateTableRow }) {
               <Typography>Reources</Typography>
             </Link>
           </li>
-          <li className={classes.li}>
+          {/* <li className={classes.li}>
             <Link to='/About' className={classes.a}>
               <Typography>About</Typography>
             </Link>
-          </li>
+          </li> */}
           <li className={classes.li}>
             <Link to='/My Charities' className={classes.a}>
               <Typography>My Charities</Typography>
@@ -116,6 +116,7 @@ function Nav({ myCharities, setMyCharities, tableRows, updateTableRow }) {
           </Route>
         </Switch>
       </nav>
+      
     </Router>
   );
 }
@@ -124,8 +125,9 @@ function Footer() {
   const classes = useStyles();
   return (
     <footer className={classes.footer}>
+      
       <Typography className={classes.footerText} color='textSecondary'>
-        2021 © Zeal ♥︎
+        2021 © zealGives ♥︎ 
       </Typography>
       <Typography className={classes.footerText} color='textSecondary'>
         All information in the Service is provided &quot;as is&quot;, with no
