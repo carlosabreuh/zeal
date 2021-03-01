@@ -29,7 +29,7 @@ export default function Header() {
       className={`${classes.title} header-text`}
     >
       
-      zealGives 🤲🏾
+      zealGives
     </Typography>
   );
 }
