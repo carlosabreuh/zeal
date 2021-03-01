@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Nav from '../../src/Navbar/Nav'
 
 
 
@@ -27,7 +28,8 @@ export default function Header() {
       component="h1"
       className={`${classes.title} header-text`}
     >
-      Zeal
+      
+      zealGives 🤲🏾
     </Typography>
   );
 }
