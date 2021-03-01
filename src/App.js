@@ -7,6 +7,7 @@ import Header from './components/Header.jsx';
 import About from './pages/About/About.jsx';
 import MyCharities from './pages/Mycharities/mycharities';
 
+
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 //
