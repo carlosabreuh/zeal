@@ -12,6 +12,7 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Alert from '@material-ui/lab/Alert';
 
 
 const useStyles = makeStyles({
@@ -71,6 +72,7 @@ export default function StatusTable({
       >
         <AddIcon />
       </Fab>
+      
     );
   }
   //myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
