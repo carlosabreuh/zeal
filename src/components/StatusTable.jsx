@@ -59,9 +59,7 @@ if (false) {
         setMyCharities((state) => [...state, newCharity]);
       }
     };
-  <Button type='submit' variant='contained' color='primary'>
-          Search
-        </Button>
+  
     buttonName = '➕'
   }
   //myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
