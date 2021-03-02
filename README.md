@@ -20,3 +20,24 @@ https://www.zealgives.com/
         • Amazon Amplify - AWS 
 
        ![](https://media.giphy.com/media/2RCg8eyqHkpSKJxNOz/giphy.gif)
+
+
+
+        ### Lingering challenges
+        * API will not grab URL from Charity when available, but rather the profile URL. 
+        * Ways to filer results after entering Zipcode
+        
+
+        ### Future Items
+        * OAuth with AWS
+        * Allow the user to enter the and search, but Register/Login when Saving a charity
+        * Able to send the charity to a friend
+        * Preserve the saved items based on user login
+        * Use multiple APIs for different causes
+
+        ###Future Ideas
+        * Partner with other organizations to come and get the donations and drop them to the desired charity. 
+        * Create an interactive map that shows the locations using Google Maps API
+        * Mobile App /  AppStore 
+
+        
