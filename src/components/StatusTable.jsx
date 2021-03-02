@@ -13,34 +13,45 @@ import AddIcon from '@material-ui/icons/Add';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Alert from '@material-ui/lab/Alert';
-
+import axios from 'axios';
 
 const useStyles = makeStyles({
   table: {},
 });
 
-export default function StatusTable({
-  tableRows,
-  myCharities,
-  setMyCharities,
-  page,
-}) {
-  const classes = useStyles();
+export default function StatusTable({ tableRows, myCharities, setMyCharities, page,}) {
+  const classes = useStyles(); 
+  
 
   const handleClick = (newCharity) => {
     console.log(newCharity);
     console.log(newCharity);
+
     buttonFunc(newCharity);
   };
 
+  // name,
+  //     websiteURL,
+  //     charityNavigatorURL,
+  //     mailingAddress,
+  //     entityClassification,
+  //     ein,
+  //     statusUpdatedAt,
+
   let buttonName, buttonFunc, actionName;
 
-  if (page === 'MyCharities') { 
+  if (page === 'MyCharities') {
     actionName = 'Remove';
-    buttonFunc = (newCharity) =>
+    buttonFunc = (newCharity) => {
       setMyCharities((state) =>
-        state.filter((charity) => newCharity.ein !== charity.ein)
+        state.filter((charity) => newCharity.id !== charity.id)
       );
+      axios
+        .delete(`http://localhost:8080/api/users/${newCharity.id}`)
+        .then((res) => console.log(res))
+        .catch((error) => console.log(error));
+    };
+
     buttonName = (
       <IconButton aria-label='delete'>
         <DeleteIcon />
@@ -54,12 +65,28 @@ export default function StatusTable({
     }
 
     buttonFunc = (newCharity) => {
-      console.log(tableRows);
-      let alreadyAdded = myCharities.filter((ch) => ch.ein === newCharity.ein)
+      console.log(myCharities);
+      console.log(newCharity);
+      let alreadyAdded = myCharities.filter((ch) => ch.name === newCharity.name)
         .length;
       console.log(alreadyAdded);
       if (!alreadyAdded) {
-        setMyCharities((state) => [...state, newCharity]);
+        let data = {
+          userName: '',
+          favoriteCharity: '',
+          city: newCharity.mailingAddress,
+          clasification: newCharity.entityClassification,
+          charityUrl: newCharity.websiteURL || newCharity.charityNavigatorURL,
+        };
+        axios
+          .post(`http://localhost:8080/api/users/`, data)
+          .then((res) => {
+            console.log(res);
+            let newNewCharity = {...newCharity};
+            newNewCharity.id = res.data.id;
+            setMyCharities((state) => [...state, newNewCharity]);
+          })
+          .catch((error) => console.log(error));
       }
     };
 
@@ -72,7 +99,6 @@ export default function StatusTable({
       >
         <AddIcon />
       </Fab>
-      
     );
   }
   //myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
@@ -83,10 +109,9 @@ export default function StatusTable({
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell>City</TableCell>
+            <TableCell>Address</TableCell>
             <TableCell>Classification / Purpose</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>{actionName}</TableCell>
+            <TableCell>Save</TableCell>
           </TableRow>
         </TableHead>
         {/* Table Contents */}
@@ -101,11 +126,20 @@ export default function StatusTable({
                   {row.name}
                 </Link>
               </TableCell>
-              <TableCell>{row.numSites}</TableCell>
-              <TableCell>{row.status}</TableCell>
-              <TableCell>{row.statusUpdatedAt}</TableCell>
+              <TableCell>{row.mailingAddress}</TableCell>
+              <TableCell>{row.entityClassification}</TableCell>
               <TableCell onClick={() => handleClick(row)}>
                 {buttonName}
+
+                {/* <TableCell>{row.statusUpdatedAt}</TableCell> */}
+
+                {/* name,
+    websiteURL,
+    charityNavigatorURL,
+    mailingAddress,
+    entityClassification,
+    ein,
+    statusUpdatedAt, */}
               </TableCell>
             </TableRow>
           ))}
