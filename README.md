@@ -18,6 +18,6 @@ https://www.zealgives.com/
         • MySQL   • MVC - Model View Controller   • JAVA
         • Spring Boot   • Maven 
 # Hosting
-        • Amazon AWS Amplify • Cognito 
+        • Amazon Amplify - AWS 
 
-        https://media.giphy.com/media/2RCg8eyqHkpSKJxNOz/giphy.gif
+       ![](https://media.giphy.com/media/2RCg8eyqHkpSKJxNOz/giphy.gif)
