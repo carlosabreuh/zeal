@@ -4,17 +4,15 @@ import StatusTable from '../../components/StatusTable';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import Alert from '../../components/Alert'
+import Alert from '../../components/Alert';
 import './Resources.css';
-
-
 
 function createData(
   name,
   websiteURL,
   charityNavigatorURL,
-  numSites,
-  status,
+  mailingAddress,
+  entityClassification,
   ein,
   statusUpdatedAt
 ) {
@@ -22,12 +20,19 @@ function createData(
     name,
     websiteURL,
     charityNavigatorURL,
-    numSites,
-    status,
+    mailingAddress,
+    entityClassification,
     ein,
     statusUpdatedAt,
   };
 }
+// res.data[i].charityName,
+// res.data[i].websiteURL,
+// res.data[i].charityNavigatorURL,
+// res.data[i].mailingAddress.streetAddress1,
+// res.data[i].irsClassification.nteeClassification,
+// res.data[i].ein,
+// 'Active'
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
@@ -72,7 +77,6 @@ export default function Resources({
               res.data[i].ein,
               'Active'
             )
-          
           );
         }
         updateTableRow([...newData]);
@@ -82,34 +86,27 @@ export default function Resources({
   return (
     <div>
       <Typography>
-        Follow the steps below to find the charities in your community. 
+        Follow the steps below to find the charities in your community.
       </Typography>
       <ol>
         <li>
-          <Typography>
-          Enter your Zipcode + Enter
-          </Typography>
+          <Typography>Enter your Zipcode + Enter</Typography>
+        </li>
+        <br></br>
+        <li>
+          <Typography>Explore results in your area</Typography>
         </li>
         <br></br>
         <li>
           <Typography>
-          Explore results in your area
-          </Typography>
-        </li>
-        <br></br>
-        <li>
-          <Typography>
-          Add them to My <cite>Charities</cite>
+            Add them to My <cite>Charities</cite>
           </Typography>
         </li>
       </ol>
 
-
-      
-
       <section className='about-section' id='supported-websites'>
         <h2 className='header-text'></h2>
-      <Alert />
+        <Alert />
 
         <br></br>
         <form
