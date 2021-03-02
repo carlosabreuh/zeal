@@ -73,7 +73,7 @@ export default function StatusTable({ tableRows, myCharities, setMyCharities, pa
       if (!alreadyAdded) {
         let data = {
           userName: '',
-          favoriteCharity: '',
+          favoriteCharity: newCharity.name,
           city: newCharity.mailingAddress,
           clasification: newCharity.entityClassification,
           charityUrl: newCharity.websiteURL || newCharity.charityNavigatorURL,
@@ -102,7 +102,7 @@ export default function StatusTable({ tableRows, myCharities, setMyCharities, pa
     );
   }
   //myCharities.includes((ch) => ch.ein!==newCharity.ein) && setMyCharities ((state) => [...state, newCharity])
-
+console.log(tableRows);
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label='simple table'>
@@ -121,13 +121,13 @@ export default function StatusTable({ tableRows, myCharities, setMyCharities, pa
               <TableCell component='th' scope='row'>
                 <Link
                   target='_blank'
-                  href={row.websiteURL || row.charityNavigatorURL}
+                  href={row.websiteURL || row.charityNavigatorURL || row.charityUrl}
                 >
-                  {row.name}
+                  {row.name || row.favoriteCharity}
                 </Link>
               </TableCell>
-              <TableCell>{row.mailingAddress}</TableCell>
-              <TableCell>{row.entityClassification}</TableCell>
+              <TableCell>{row.mailingAddress || row.city}</TableCell>
+              <TableCell>{row.entityClassification || row.clasification}</TableCell>
               <TableCell onClick={() => handleClick(row)}>
                 {buttonName}
 
