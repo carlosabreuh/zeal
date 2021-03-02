@@ -17,7 +17,6 @@ https://www.zealgives.com/
 • Back End
         • MySQL   • MVC - Model View Controller   • JAVA
         • Spring Boot   • Maven 
-• Hosting
         • Amazon Amplify - AWS 
 
        ![](https://media.giphy.com/media/2RCg8eyqHkpSKJxNOz/giphy.gif)
