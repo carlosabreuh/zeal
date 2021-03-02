@@ -78,7 +78,7 @@ function Nav({ myCharities, setMyCharities, tableRows, updateTableRow }) {
           </li>
           <li className={classes.li}>
             <Link to='/Resources' className={classes.a}>
-              <Typography>Reources</Typography>
+              <Typography>Resources</Typography>
             </Link>
           </li>
           {/* <li className={classes.li}>
