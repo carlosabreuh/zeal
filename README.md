@@ -19,7 +19,8 @@
         • Spring Boot   • Maven 
         • Amazon Amplify - AWS 
 
-       ![](https://media.giphy.com/media/2RCg8eyqHkpSKJxNOz/giphy.gif)
+       ![Zeal](https://media.giphy.com/media/2RCg8eyqHkpSKJxNOz/giphy.gif)
+       
 
 
 
