@@ -61,7 +61,7 @@ export default function Resources({
   const fetchAPI = () => {
     axios
       .get(
-        `https://api.data.charitynavigator.org/v2/Organizations?app_id=add449e8&app_key=52619515e595f9abec5876bcd378bcff&zip=${zip}`
+        `https://api.data.charitynavigator.org/v2/Organizations?app_id=add449e8&app_key=52619515e595f9abec5876bcd378bcff&pageSize=1000&pageNum=1&fundraisingOrgs=true&zip=${zip}`
       )
       .then((res) => {
         const newData = [];
