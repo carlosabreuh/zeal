@@ -4,7 +4,7 @@ import MaterialAlert from "@material-ui/lab/Alert";
 export default function Alert() {
   return (
     <MaterialAlert severity="info">
-      Results are based on your Zipcode.   Links will lead to the profile of the charity, where you will be able to explore their standing and integrity.  Make sure to vet the charity of your choice before donating.  
+      Results are based on your Zipcode and links will lead to the charitie's website.  If there are no results for your zipcode, the application is working, except there may not be organizations within the parameters of the API.  Leave blank and press enter to test.   
     </MaterialAlert>
   );
 }
