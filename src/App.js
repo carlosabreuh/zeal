@@ -81,11 +81,11 @@ function Nav({ myCharities, setMyCharities, tableRows, updateTableRow }) {
               <Typography>Resources</Typography>
             </Link>
           </li>
-          {/* <li className={classes.li}>
+           <li className={classes.li}>
             <Link to='/About' className={classes.a}>
               <Typography>About</Typography>
             </Link>
-          </li> */}
+          </li> 
           <li className={classes.li}>
             <Link to='/My Charities' className={classes.a}>
               <Typography>My Charities</Typography>
