@@ -6,7 +6,7 @@ export default function About() {
     <div>
       <Typography>
         This app was built using JavaScript and Material-UI. The backend is
-        powered by Java and MySQL, which is only available on my local machine
+        built with Java and MySQL, which is only available on my local machine
         at the moment and the reason why you cannot save to "My Charities". As I
         host this app on AWS, I will be working to migrate the backend to the
         cloud using AWS as well.
