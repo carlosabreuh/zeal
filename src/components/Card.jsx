@@ -68,9 +68,7 @@ export default function RecipeReviewCard() {
         image="/static/images/cards/paella.jpg"
         title="Paella dish"
       />
-      <CardContent>
-        
-      </CardContent>
+     
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
