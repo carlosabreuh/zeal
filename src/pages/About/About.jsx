@@ -1,30 +1,25 @@
-import React from 'react';
-import { Typography } from '@material-ui/core';
+import React from "react";
+import { Typography } from "@material-ui/core";
+import Icon from "@material-ui/icons/Favorite";
 
 export default function About() {
   return (
     <div>
       <Typography>
-        This app was built using JavaScript and Material-UI. The backend is
-        built with Java and MySQL, which is only available on my local machine
-        at the moment and the reason why you cannot save to "My Charities". As I
-        host this app on AWS, I will be working to migrate the backend to the
-        cloud using AWS as well.
+        This app was made with{" "}
+        <Icon className="fa fa-plus-circle" color="secondary" /> using
+        JavaScript, React.js and Material-UI. The backend is built also with{" "}
+        <Icon className="fa fa-plus-circle" color="secondary" /> using Spring
+        Boot Java and MySQL Workbench.
       </Typography>
       <ul>
         <li>
-          <Typography>If you have suggestions on how to make this application better, please do not hesitate to contact me!</Typography>
-        </li>
-        <br></br>
-        <li>
-          <Typography>If you have the ability to doante to those in need, DO SO! </Typography>
-        </li>
-        <br></br>
-        <li>
           <Typography>
-            Let's be nice humans! 
+            If you have suggestions on how to make this application better,
+            please do not hesitate to contact me!
           </Typography>
         </li>
+        <br></br>
       </ul>
     </div>
   );
