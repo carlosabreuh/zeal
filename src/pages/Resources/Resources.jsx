@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import StatusTable from '../../components/StatusTable';
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
-import Alert from '../../components/Alert';
-import './Resources.css';
+import React, { useState } from "react";
+import axios from "axios";
+import StatusTable from "../../components/StatusTable";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
+import Alert from "../../components/Alert";
+import "./Resources.css";
 
 function createData(
   name,
@@ -35,9 +35,9 @@ function createData(
 // 'Active'
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiTextField-root': {
+    "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: '25ch',
+      width: "25ch",
     },
   },
 }));
@@ -48,20 +48,20 @@ export default function Resources({
   tableRows,
   updateTableRow,
 }) {
-  const [st, setSt] = useState('');
-  const [zip, setZip] = useState('');
-  const [search, setSearch] = useState('');
+  const [st, setSt] = useState("");
+  const [zip, setZip] = useState("");
+  const [search, setSearch] = useState("");
   const classes = useStyles();
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchAPI();
-    console.log('Hello');
+    console.log("Hello");
   };
 
   const fetchAPI = () => {
     axios
       .get(
-        `https://api.data.charitynavigator.org/v2/Organizations?app_id=add449e8&app_key=52619515e595f9abec5876bcd378bcff&pageSize=1000&pageNum=1&fundraisingOrgs=true&zip=${zip}`
+        `https://api.data.charitynavigator.org/v2/Organizations?app_id=2945124d&app_key=7e5e518e98867adfe9c1e0e86f0c7817&pageSize=1000&pageNum=1&fundraisingOrgs=false&zip=${zip}`
       )
       .then((res) => {
         const newData = [];
@@ -75,7 +75,7 @@ export default function Resources({
               res.data[i].mailingAddress.streetAddress1,
               res.data[i].irsClassification.nteeClassification,
               res.data[i].ein,
-              'Active'
+              "Active"
             )
           );
         }
@@ -104,8 +104,8 @@ export default function Resources({
         </li>
       </ol>
 
-      <section className='about-section' id='supported-websites'>
-        <h2 className='header-text'></h2>
+      <section className="about-section" id="supported-websites">
+        <h2 className="header-text"></h2>
         <Alert />
 
         <br></br>
@@ -113,13 +113,13 @@ export default function Resources({
           onSubmit={handleSubmit}
           className={classes.root}
           noValidate
-          autoComplete='off'
+          autoComplete="off"
         >
           <TextField
             value={zip}
             onChange={(e) => setZip(e.target.value)}
-            id='filled-basic'
-            label='Enter Zip'
+            id="filled-basic"
+            label="Enter Zip"
           />
           {/* <TextField
             value={st}
@@ -141,13 +141,13 @@ export default function Resources({
             myCharities={myCharities}
             setMyCharities={setMyCharities}
             tableRows={tableRows}
-            page={'Resources'}
+            page={"Resources"}
           />
         ) : (
-          ''
+          ""
         )}
       </section>
-      <section className='about-section' id='faq'></section>
+      <section className="about-section" id="faq"></section>
     </div>
   );
 }
