@@ -1,6 +1,21 @@
 # zeal
 ## https://www.zealgives.com/
 
+![Queen's Apple](https://user-images.githubusercontent.com/59297307/125382811-5f4c4200-e364-11eb-9c2e-64af0af67704.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Donations and Assistance 
 
 #### Zeal is a one stop finder for local resources that can assist those who want to donate for a noble cause.  With Zeal, you can search local charities by Zipcode, where you will find the address of the organization, and also be able to save charities of your choice.  
