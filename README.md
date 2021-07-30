@@ -1,4 +1,4 @@
-# Zeal-App
+# zeal
 ## https://www.zealgives.com/
 
 ### Donations and Assistance 
