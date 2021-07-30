@@ -1,7 +1,7 @@
 # zeal
 ## https://www.zealgives.com/
 
-![zeal](https://gyazo.com/c1ffbbc40fafedc573f03454951ddd85)
+![zeal](zeal.png)
 
 
 
