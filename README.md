@@ -1,7 +1,7 @@
 # zeal
 ## https://www.zealgives.com/
 
-![Queen's Apple](https://user-images.githubusercontent.com/59297307/125382811-5f4c4200-e364-11eb-9c2e-64af0af67704.png)
+![zeal](https://gyazo.com/c1ffbbc40fafedc573f03454951ddd85)
 
 
 
