@@ -1,5 +1,8 @@
-# Zeal-App
+
+![zeal](zeal.png)
+
 ## https://www.zealgives.com/
+
 
 ### Donations and Assistance 
 
