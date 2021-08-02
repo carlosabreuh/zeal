@@ -60,8 +60,10 @@ export default function Resources({
 
   const fetchAPI = () => {
     axios
+      //https://api.data.charitynavigator.org/v2/Organizations?app_id=2945124d&app_key=7e5e518e98867adfe9c1e0e86f0c7817
       .get(
-        `https://api.data.charitynavigator.org/v2/Organizations?app_id=2945124d&app_key=7e5e518e98867adfe9c1e0e86f0c7817&pageSize=1000&pageNum=1&fundraisingOrgs=true&zip=${zip}`
+        `https://api.data.charitynavigator.org/v2/Organizations?app_id=2945124d&app_key=7e5e518e98867adfe9c1e0e86f0c7817&pageSize=700&pageNum=1&fundraisingOrgs=false&zip=${zip}`
+        //`https://api.data.charitynavigator.org/v2/Organizations?app_id=2945124d&app_key=7e5e518e98867adfe9c1e0e86f0c7817&pageSize=700&pageNum=1&fundraisingOrgs=false&zip=${zip}`
       )
       .then((res) => {
         const newData = [];
